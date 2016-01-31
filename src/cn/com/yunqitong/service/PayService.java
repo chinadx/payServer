@@ -383,12 +383,12 @@ public class PayService {
 		}
 		log.info("插入完成,通知AS支付结果并将订购信息给AS");
 		// 4.通知AS支付结果
-		String url=PropertyFactory.getProperty("ASSADDR");
-		try {
-			HttpsUtil.doPost(url+"/mobile/pay/wx", tOrderRecord.getAcceptContent());
-		} catch (Exception e) {
-			log.error("通知AS支付结果时异常"+e.getMessage(),e);
-		}
+//		String url=PropertyFactory.getProperty("ASSADDR");
+//		try {
+//			HttpsUtil.doPost(url+"/mobile/pay/wx", tOrderRecord.getAcceptContent());
+//		} catch (Exception e) {
+//			log.error("通知AS支付结果时异常"+e.getMessage(),e);
+//		}
 		log.info("所有操作已完毕,通知微信已接收到通知,交易结束...");
 		//都没有问题,返回微信已接收支付成功结果
 		map.put("return_code", "SUCCESS");
