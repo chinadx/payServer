@@ -58,6 +58,7 @@ public class HttpsUtil {
 		method.setEntity(entity);	
 		HttpResponse httpResponse = closeableHttpClient.execute(method);
 		HttpEntity httpEntity2 = httpResponse.getEntity();
+		System.out.println("返回值为：" + httpResponse.toString());
 		if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 			String result = EntityUtils.toString(httpEntity2);
 			responseText  = result;

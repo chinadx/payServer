@@ -79,7 +79,7 @@ public class PayService {
 		// nonce-str 随机字符串 sign 签名 out_trade_no 订单号 trade_type 交易类型--->APP
 		String nonce_str = IDGenerator.get32Random() + "";
 		String out_trade_no = IDGenerator.get32Random() + "";
-		String trade_type = "APP";
+		String trade_type = "JSAPI";
 		log.info("支付方式  "+trade_type);
 		SortedMap<Object, Object> parameters = new TreeMap<Object, Object>();
 		parameters.put("appid", appid);
@@ -89,6 +89,8 @@ public class PayService {
 		parameters.put("spbill_create_ip", spbill_create_ip+"");
 		parameters.put("out_trade_no", out_trade_no);
 		parameters.put("trade_type", trade_type);
+		parameters.put("openid", "ogGs4v73sDPM6w0dpLP7kTELzsuU");
+		parameters.put("device_info", "WEB");
 		
 		//添加附加数据,用户公众平台查账使用
 		parameters.put("attach", dateFromRemote.optString("accountId"));
